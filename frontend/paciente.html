@@ -41,7 +41,30 @@
     </header>
     <main>
         <div class="container">
-            <p class="titulo">Prontuário Eletrônico do Paciente - PEP</p>
+          <h3>Cadastro de Pacientes</h3>
+          <!-- inicia com um form-->
+          <form action="">
+              <!-- mb-3 significa margin bottom de 1rem (16px)-->
+
+            <div class="mb-3">
+               <label for="nome" class="form-label">Nome</label>
+                <input type="text" id="nome" class="form-control" placeholder="Informe seu nome"/>
+               
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" id="cpf" class="form-control" placeholder="Informe seu CPF"/>
+
+                <label for="peso" class="form-label">Peso</label>
+                <input type="text" id="peso" class="form-control" placeholder="Informe seu peso"/>
+
+                <label for="altura" class="form-label">Altura</label>
+                <input type="text" id="altura" class="form-control" placeholder="Informe seu altura"/>
+
+                <label for="idade" class="form-label">Idade</label>
+                <input type="text" id="idade" class="form-control" placeholder="Informe sua idade"/>
+              </div>
+              <button type="button" onclick="cadastrar()" class="btn btn-secondary"> Enviar </button>
+          </form>
+          <h3>Lista de Pacientes</h3>
     </main>
     <footer>
 
