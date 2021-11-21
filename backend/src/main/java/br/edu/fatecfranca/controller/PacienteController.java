@@ -33,7 +33,8 @@ public class PacienteController {
 	
 	@PostMapping
 	// CORS - Cross Origin Resource Sharing
-	
+	// O Cross Origem seja utilizado de qualquer lugar (ip de qualquer lugar)
+	@CrossOrigin(origins="*")
 	public String add(@RequestBody Paciente paciente) {
 		
 		//{
@@ -49,14 +50,22 @@ public class PacienteController {
 	//método para consultar no banco de dados
 	@GetMapping
 	// CORS - Cross Origin Resource Sharing
+	// O Cross Origem seja utilizado de qualquer lugar (ip de qualquer lugar)
+	// A API pode ser acessada de qualquer IP
+	@CrossOrigin(origins="*")
+	
 	
 	public List<Paciente> get(){
+		//procurar os pacientes no banco de dados
 		return injecao.findAll();
 	}
 	
 	//método para remover do banco de dados
 	@DeleteMapping("/{id}")
+	//remover um paciente no banco de dados
 	// CORS - Cross Origin Resource Sharing
+	// O Cross Origem seja utilizado de qualquer lugar (ip de qualquer lugar)
+	@CrossOrigin(origins="*")
 
 	public String remove(@PathVariable Long id) {
 		injecao.deleteById(id);
@@ -66,9 +75,11 @@ public class PacienteController {
 	//método para atualizar no banco de dados
 	@PutMapping
 	// CORS - Cross Origin Resource Sharing
-	
+	// O Cross Origem seja utilizado de qualquer lugar (ip de qualquer lugar)
+	@CrossOrigin(origins="*")
 	
 	public String update(@RequestBody Paciente paciente) {
+		// atualiza o paciente no banco de dados
 		injecao.save(paciente); //paciente tem id, e portanto vai atualizar
 		return "Paciente atualizado com sucesso";
 	}
